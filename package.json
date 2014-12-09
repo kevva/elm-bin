@@ -1,6 +1,6 @@
 {
   "name": "elm-platform-bin",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "elm-platform wrapper that makes it seamlessly available as a local dependency",
   "license": "MIT",
   "repository": "kevva/elm-platform-bin",
