@@ -1,7 +1,7 @@
 'use strict';
 
 var binCheck = require('bin-check');
-var each = require('each-async');
+var each = require('async-each-series');
 var elm = require('./');
 var test = require('ava');
 
