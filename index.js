@@ -11,5 +11,5 @@
 	'reactor',
 	'repl'
 ].forEach(function (bin) {
-	module.exports[bin] = require('./lib')('elm-' + bin).path();
+	module.exports[bin] = require('./lib')(bin).path();
 });
