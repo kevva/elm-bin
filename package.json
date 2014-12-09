@@ -1,0 +1,43 @@
+{
+  "name": "elm-platform-bin",
+  "version": "1.0.0",
+  "description": "",
+  "license": "MIT",
+  "repository": "kevva/elm-platform-bin",
+  "author": {
+    "name": "Kevin Mårtensson",
+    "email": "kevinmartensson@gmail.com",
+    "url": "https://github.com/kevva"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "bin": {
+    "elm-doc": "cli.js --elm-binary-name elm-doc",
+    "elm-make": "cli.js --elm-binary-name elm-make",
+    "elm-package": "cli.js --elm-binary-name elm-package",
+    "elm-reactor": "cli.js --elm-binary-name elm-reactor",
+    "elm-repl": "cli.js --elm-binary-name elm-repl"
+  },
+  "scripts": {
+    "postinstall": "node lib/install.js",
+    "test": "node test.js"
+  },
+  "files": [
+    "cli.js",
+    "index.js",
+    "lib"
+  ],
+  "keywords": [],
+  "dependencies": {
+    "bin-wrapper": "^2.0.1",
+    "dargs": "^3.0.0",
+    "each-async": "^1.1.0",
+    "logalot": "^2.0.0",
+    "minimist": "^1.1.0"
+  },
+  "devDependencies": {
+    "ava": "^0.0.4",
+    "bin-check": "^1.0.0"
+  }
+}
