@@ -13,11 +13,11 @@
     "node": ">=0.10.0"
   },
   "bin": {
-    "elm-doc": "cli.js --elm-binary-name elm-doc",
-    "elm-make": "cli.js --elm-binary-name elm-make",
-    "elm-package": "cli.js --elm-binary-name elm-package",
-    "elm-reactor": "cli.js --elm-binary-name elm-reactor",
-    "elm-repl": "cli.js --elm-binary-name elm-repl"
+    "elm-doc": "cli.js --elm-binary-name doc",
+    "elm-make": "cli.js --elm-binary-name make",
+    "elm-package": "cli.js --elm-binary-name package",
+    "elm-reactor": "cli.js --elm-binary-name reactor",
+    "elm-repl": "cli.js --elm-binary-name repl"
   },
   "scripts": {
     "postinstall": "node lib/install.js",

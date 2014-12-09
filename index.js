@@ -5,11 +5,11 @@
  */
 
 [
-	'elm-doc',
-	'elm-make',
-	'elm-package',
-	'elm-reactor',
-	'elm-repl'
+	'doc',
+	'make',
+	'package',
+	'reactor',
+	'repl'
 ].forEach(function (bin) {
-	module.exports[bin] = require('./lib')(bin).path();
+	module.exports[bin] = require('./lib')('elm-' + bin).path();
 });

@@ -9,11 +9,11 @@ test('return path to binaries and verify that they are working', function (t) {
 	t.plan(10);
 
 	var bins = [
-		'elm-doc',
-		'elm-make',
-		'elm-package',
-		'elm-reactor',
-		'elm-repl'
+		'doc',
+		'make',
+		'package',
+		'reactor',
+		'repl'
 	];
 
 	each(bins, function (bin) {
