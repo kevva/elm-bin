@@ -16,10 +16,11 @@ test('return path to binaries and verify that they are working', function (t) {
 		'repl'
 	];
 
-	each(bins, function (bin) {
+	each(bins, function (bin, next) {
 		binCheck(elm[bin], ['--help'], function (err, stdout) {
 			t.assert(!err, err);
 			t.assert(stdout);
+			next();
 		});
 	});
 });
