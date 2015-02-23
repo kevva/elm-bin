@@ -1,9 +1,5 @@
 'use strict';
 
-/**
- * Module exports
- */
-
 [
 	'doc',
 	'make',
