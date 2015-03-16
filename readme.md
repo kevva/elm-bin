@@ -5,7 +5,7 @@
 ## Install
 
 ```sh
-$ npm install --global elm-platform-bin
+$ npm install --global elm
 ```
 
 ```sh

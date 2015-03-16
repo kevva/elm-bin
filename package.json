@@ -1,5 +1,5 @@
 {
-  "name": "elm-platform-bin",
+  "name": "elm",
   "version": "1.2.0+elm-0.14",
   "description": "elm-platform wrapper that makes it seamlessly available as a local dependency",
   "license": "MIT",
