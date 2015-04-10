@@ -2,19 +2,21 @@
 
 > Binary wrapper for [elm-platform](https://github.com/elm-lang/elm-platform)
 
+
 ## Install
 
-```sh
+```
 $ npm install --global elm
 ```
 
-```sh
+```
 $ elm-doc --help
 $ elm-make --help
 $ elm-package --help
 $ elm-reactor --help
 $ elm-repl --help
 ```
+
 
 ## License
 
