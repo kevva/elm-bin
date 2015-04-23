@@ -1,4 +1,4 @@
-# elm-platform-bin [![Build Status](http://img.shields.io/travis/kevva/elm-platform-bin/master.svg?style=flat)](http://travis-ci.org/kevva/elm-platform-bin)
+# elm-platform-bin [![Build Status](https://travis-ci.org/kevva/elm-platform-bin.svg?branch=master)](http://travis-ci.org/kevva/elm-platform-bin)
 
 > Binary wrapper for [elm-platform](https://github.com/elm-lang/elm-platform)
 
