@@ -3,7 +3,7 @@
   "version": "1.3.0+elm-0.15",
   "description": "elm-platform wrapper that makes it seamlessly available as a local dependency",
   "license": "MIT",
-  "repository": "kevva/elm-platform-bin",
+  "repository": "kevva/elm-bin",
   "author": {
     "name": "Kevin Mårtensson",
     "email": "kevinmartensson@gmail.com",
