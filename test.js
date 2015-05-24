@@ -9,11 +9,12 @@ test('return path to binaries and verify that they are working', function (t) {
 	t.plan(10);
 
 	var bins = [
-		'doc',
-		'make',
-		'package',
-		'reactor',
-		'repl'
+		'elm',
+		'elm-doc',
+		'elm-make',
+		'elm-package',
+		'elm-reactor',
+		'elm-repl'
 	];
 
 	asyncEachSeries(bins, function (bin, next) {
