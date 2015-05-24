@@ -2,7 +2,7 @@
 'use strict';
 
 var spawn = require('child_process').spawn;
-var bin = require('../').repl;
+var bin = require('../')['elm-repl'];
 var input = process.argv.slice(2);
 
 spawn(bin, input, {stdio: 'inherit'})
