@@ -27,7 +27,8 @@
   "files": [
     "bin",
     "index.js",
-    "lib"
+    "lib",
+    "share"
   ],
   "keywords": [
     "bin",
