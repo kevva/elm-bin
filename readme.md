@@ -17,6 +17,7 @@ $ elm-reactor --help
 $ elm-repl --help
 ```
 
+Also, set the `ELM_HOME` environment variable to `/usr/local/lib/node_modules/elm/share` or the corresponding directory created on your machine.
 
 ## License
 
