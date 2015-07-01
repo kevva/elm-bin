@@ -14,7 +14,6 @@
   },
   "bin": {
     "elm": "bin/elm",
-    "elm-doc": "bin/elm-doc",
     "elm-make": "bin/elm-make",
     "elm-package": "bin/elm-package",
     "elm-reactor": "bin/elm-reactor",

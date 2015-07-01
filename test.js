@@ -10,7 +10,6 @@ test('return path to binaries and verify that they are working', function (t) {
 
 	var bins = [
 		'elm',
-		'elm-doc',
 		'elm-make',
 		'elm-package',
 		'elm-reactor',

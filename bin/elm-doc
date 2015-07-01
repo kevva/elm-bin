@@ -1,9 +1,0 @@
-#!/usr/bin/env node
-'use strict';
-
-var spawn = require('child_process').spawn;
-var bin = require('../')['elm-doc'];
-var input = process.argv.slice(2);
-
-spawn(bin, input, {stdio: 'inherit'})
-	.on('exit', process.exit);

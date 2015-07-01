@@ -2,7 +2,6 @@
 
 [
 	'elm',
-	'elm-doc',
 	'elm-make',
 	'elm-package',
 	'elm-reactor',
