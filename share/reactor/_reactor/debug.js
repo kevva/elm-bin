@@ -16,6 +16,10 @@ Elm.Array.make = function (_elm) {
    $Native$Array = Elm.Native.Array.make(_elm);
    var append = $Native$Array.append;
    var length = $Native$Array.length;
+   var isEmpty = function (array) {
+      return _U.eq(length(array),
+      0);
+   };
    var slice = $Native$Array.slice;
    var set = $Native$Array.set;
    var get = F2(function (i,
@@ -72,6 +76,7 @@ Elm.Array.make = function (_elm) {
                        ,repeat: repeat
                        ,initialize: initialize
                        ,fromList: fromList
+                       ,isEmpty: isEmpty
                        ,length: length
                        ,push: push
                        ,append: append
@@ -503,7 +508,7 @@ Elm.Color.make = function (_elm) {
                         ,saturation: s};
               }();}
          _U.badCase($moduleName,
-         "between lines 114 and 121");
+         "between lines 114 and 118");
       }();
    };
    var HSLA = F4(function (a,
@@ -559,7 +564,7 @@ Elm.Color.make = function (_elm) {
                  color._3);
               }();}
          _U.badCase($moduleName,
-         "between lines 105 and 111");
+         "between lines 105 and 108");
       }();
    };
    var grayscale = function (p) {
@@ -839,7 +844,7 @@ Elm.Dict.make = function (_elm) {
               A3(foldr,f,acc,t._4)),
               t._3);}
          _U.badCase($moduleName,
-         "between lines 408 and 416");
+         "between lines 417 and 421");
       }();
    });
    var keys = function (dict) {
@@ -895,7 +900,7 @@ Elm.Dict.make = function (_elm) {
               A3(foldl,f,acc,dict._3)),
               dict._4);}
          _U.badCase($moduleName,
-         "between lines 397 and 405");
+         "between lines 406 and 410");
       }();
    });
    var isBBlack = function (dict) {
@@ -919,7 +924,7 @@ Elm.Dict.make = function (_elm) {
             case "Remove": return "Remove";
             case "Same": return "Same";}
          _U.badCase($moduleName,
-         "between lines 173 and 179");
+         "between lines 182 and 185");
       }();
    };
    var Same = {ctor: "Same"};
@@ -949,10 +954,10 @@ Elm.Dict.make = function (_elm) {
                       targetKey,
                       dict._3);}
                  _U.badCase($moduleName,
-                 "between lines 129 and 135");
+                 "between lines 129 and 132");
               }();}
          _U.badCase($moduleName,
-         "between lines 124 and 135");
+         "between lines 124 and 132");
       }();
    });
    var member = F2(function (key,
@@ -979,7 +984,7 @@ Elm.Dict.make = function (_elm) {
                         ,_1: dict._2};}
               return max(dict._4);}
          _U.badCase($moduleName,
-         "between lines 100 and 121");
+         "between lines 100 and 108");
       }();
    };
    var min = function (dict) {
@@ -1033,6 +1038,9 @@ Elm.Dict.make = function (_elm) {
    var LBBlack = {ctor: "LBBlack"};
    var LBlack = {ctor: "LBlack"};
    var empty = RBEmpty(LBlack);
+   var isEmpty = function (dict) {
+      return _U.eq(dict,empty);
+   };
    var map = F2(function (f,dict) {
       return function () {
          switch (dict.ctor)
@@ -1048,7 +1056,7 @@ Elm.Dict.make = function (_elm) {
               A2(map,f,dict._3),
               A2(map,f,dict._4));}
          _U.badCase($moduleName,
-         "between lines 385 and 394");
+         "between lines 394 and 399");
       }();
    });
    var showNColor = function (c) {
@@ -1097,7 +1105,7 @@ Elm.Dict.make = function (_elm) {
                    dict._4);}
               break;}
          _U.badCase($moduleName,
-         "between lines 145 and 157");
+         "between lines 154 and 162");
       }();
    };
    var blackish = function (t) {
@@ -1108,7 +1116,7 @@ Elm.Dict.make = function (_elm) {
             return _U.eq(t._0,
               Black) || _U.eq(t._0,BBlack);}
          _U.badCase($moduleName,
-         "between lines 330 and 332");
+         "between lines 339 and 341");
       }();
    };
    var blacken = function (t) {
@@ -1123,7 +1131,7 @@ Elm.Dict.make = function (_elm) {
               t._3,
               t._4);}
          _U.badCase($moduleName,
-         "between lines 369 and 371");
+         "between lines 378 and 380");
       }();
    };
    var Red = {ctor: "Red"};
@@ -1136,7 +1144,7 @@ Elm.Dict.make = function (_elm) {
             case "NBlack": return Red;
             case "Red": return Black;}
          _U.badCase($moduleName,
-         "between lines 235 and 239");
+         "between lines 244 and 248");
       }();
    };
    var lessBlack = function (color) {
@@ -1148,7 +1156,7 @@ Elm.Dict.make = function (_elm) {
             return $Native$Debug.crash("Can\'t make a negative black node less black!");
             case "Red": return NBlack;}
          _U.badCase($moduleName,
-         "between lines 244 and 248");
+         "between lines 253 and 257");
       }();
    };
    var lessBlackTree = function (dict) {
@@ -1166,7 +1174,7 @@ Elm.Dict.make = function (_elm) {
               dict._3,
               dict._4);}
          _U.badCase($moduleName,
-         "between lines 253 and 255");
+         "between lines 262 and 264");
       }();
    };
    var redden = function (t) {
@@ -1181,7 +1189,7 @@ Elm.Dict.make = function (_elm) {
               t._3,
               t._4);}
          _U.badCase($moduleName,
-         "between lines 377 and 382");
+         "between lines 386 and 388");
       }();
    };
    var balance_node = function (t) {
@@ -1383,7 +1391,7 @@ Elm.Dict.make = function (_elm) {
               r._3,
               r._4));}
          _U.badCase($moduleName,
-         "between lines 314 and 319");
+         "between lines 323 and 328");
       }();
    });
    var rem = F3(function (c,l,r) {
@@ -1404,7 +1412,7 @@ Elm.Dict.make = function (_elm) {
                               case "Red":
                               return RBEmpty(LBlack);}
                            _U.badCase($moduleName,
-                           "between lines 273 and 277");
+                           "between lines 282 and 286");
                         }();
                       case "RBNode":
                       return function () {
@@ -1494,7 +1502,7 @@ Elm.Dict.make = function (_elm) {
                    break;}
               break;}
          _U.badCase($moduleName,
-         "between lines 271 and 300");
+         "between lines 280 and 309");
       }();
    });
    var update = F3(function (k,
@@ -1524,7 +1532,7 @@ Elm.Dict.make = function (_elm) {
                                       ,_0: Same
                                       ,_1: empty};}
                             _U.badCase($moduleName,
-                            "between lines 185 and 189");
+                            "between lines 194 and 198");
                          }();}
                     break;
                   case "RBNode":
@@ -1553,7 +1561,7 @@ Elm.Dict.make = function (_elm) {
                                          dict._3,
                                          dict._4)};}
                                _U.badCase($moduleName,
-                               "between lines 192 and 197");
+                               "between lines 201 and 206");
                             }();
                           case "GT": return function () {
                                var $ = up(dict._4),
@@ -1589,7 +1597,7 @@ Elm.Dict.make = function (_elm) {
                                             dict._3,
                                             newRight)};}
                                   _U.badCase($moduleName,
-                                  "between lines 206 and 211");
+                                  "between lines 215 and 220");
                                }();
                             }();
                           case "LT": return function () {
@@ -1626,14 +1634,14 @@ Elm.Dict.make = function (_elm) {
                                             newLeft,
                                             dict._4)};}
                                   _U.badCase($moduleName,
-                                  "between lines 199 and 204");
+                                  "between lines 208 and 213");
                                }();
                             }();}
                        _U.badCase($moduleName,
-                       "between lines 190 and 211");
+                       "between lines 199 and 220");
                     }();}
                _U.badCase($moduleName,
-               "between lines 183 and 211");
+               "between lines 192 and 220");
             }();
          };
          var $ = up(dict),
@@ -1648,7 +1656,7 @@ Elm.Dict.make = function (_elm) {
                case "Same":
                return updatedDict;}
             _U.badCase($moduleName,
-            "between lines 213 and 219");
+            "between lines 222 and 225");
          }();
       }();
    });
@@ -1665,7 +1673,7 @@ Elm.Dict.make = function (_elm) {
       return A3(insert,
       key,
       value,
-      RBEmpty(LBlack));
+      empty);
    });
    var union = F2(function (t1,
    t2) {
@@ -1685,7 +1693,7 @@ Elm.Dict.make = function (_elm) {
                  _v214._1,
                  dict);}
             _U.badCase($moduleName,
-            "on line 457, column 38 to 59");
+            "on line 466, column 38 to 59");
          }();
       }),
       empty,
@@ -1743,7 +1751,7 @@ Elm.Dict.make = function (_elm) {
                                               value,
                                               _v220._1)};}
                _U.badCase($moduleName,
-               "between lines 478 and 480");
+               "between lines 487 and 489");
             }();
          });
          return A3(foldl,
@@ -1774,6 +1782,7 @@ Elm.Dict.make = function (_elm) {
                       ,singleton: singleton
                       ,insert: insert
                       ,update: update
+                      ,isEmpty: isEmpty
                       ,get: get
                       ,remove: remove
                       ,member: member
@@ -1908,7 +1917,7 @@ Elm.Graphics.Collage.make = function (_elm) {
                               ,["y",f.y + _v0._1]],
               f);}
          _U.badCase($moduleName,
-         "on line 226, column 7 to 35");
+         "on line 226, column 3 to 37");
       }();
    });
    var form = function (f) {
@@ -2591,7 +2600,7 @@ Elm.Graphics.Element.make = function (_elm) {
                  maxOrZero(ws),
                  $List.sum(hs));}
             _U.badCase($moduleName,
-            "between lines 362 and 373");
+            "between lines 362 and 368");
          }();
       }();
    });
@@ -2721,7 +2730,12 @@ Elm.Html.make = function (_elm) {
    _U = _N.Utils.make(_elm),
    _L = _N.List.make(_elm),
    $moduleName = "Html",
+   $Basics = Elm.Basics.make(_elm),
    $Graphics$Element = Elm.Graphics.Element.make(_elm),
+   $List = Elm.List.make(_elm),
+   $Maybe = Elm.Maybe.make(_elm),
+   $Result = Elm.Result.make(_elm),
+   $Signal = Elm.Signal.make(_elm),
    $VirtualDom = Elm.VirtualDom.make(_elm);
    var fromElement = $VirtualDom.fromElement;
    var toElement = $VirtualDom.toElement;
@@ -2949,6 +2963,9 @@ Elm.Html.Attributes.make = function (_elm) {
    $Html = Elm.Html.make(_elm),
    $Json$Encode = Elm.Json.Encode.make(_elm),
    $List = Elm.List.make(_elm),
+   $Maybe = Elm.Maybe.make(_elm),
+   $Result = Elm.Result.make(_elm),
+   $Signal = Elm.Signal.make(_elm),
    $String = Elm.String.make(_elm),
    $VirtualDom = Elm.VirtualDom.make(_elm);
    var attribute = $VirtualDom.attribute;
@@ -3631,9 +3648,23 @@ Elm.Json.Decode.make = function (_elm) {
    };
    var Decoder = {ctor: "Decoder"};
    _elm.Json.Decode.values = {_op: _op
-                             ,Decoder: Decoder
-                             ,map: map
                              ,decodeString: decodeString
+                             ,decodeValue: decodeValue
+                             ,string: string
+                             ,$int: $int
+                             ,$float: $float
+                             ,bool: bool
+                             ,$null: $null
+                             ,list: list
+                             ,array: array
+                             ,tuple1: tuple1
+                             ,tuple2: tuple2
+                             ,tuple3: tuple3
+                             ,tuple4: tuple4
+                             ,tuple5: tuple5
+                             ,tuple6: tuple6
+                             ,tuple7: tuple7
+                             ,tuple8: tuple8
                              ,at: at
                              ,object1: object1
                              ,object2: object2
@@ -3645,29 +3676,15 @@ Elm.Json.Decode.make = function (_elm) {
                              ,object8: object8
                              ,keyValuePairs: keyValuePairs
                              ,dict: dict
-                             ,oneOf: oneOf
-                             ,string: string
-                             ,$float: $float
-                             ,$int: $int
-                             ,bool: bool
-                             ,list: list
-                             ,array: array
-                             ,$null: $null
                              ,maybe: maybe
-                             ,value: value
-                             ,decodeValue: decodeValue
-                             ,customDecoder: customDecoder
-                             ,andThen: andThen
+                             ,oneOf: oneOf
+                             ,map: map
                              ,fail: fail
                              ,succeed: succeed
-                             ,tuple1: tuple1
-                             ,tuple2: tuple2
-                             ,tuple3: tuple3
-                             ,tuple4: tuple4
-                             ,tuple5: tuple5
-                             ,tuple6: tuple6
-                             ,tuple7: tuple7
-                             ,tuple8: tuple8};
+                             ,andThen: andThen
+                             ,value: value
+                             ,customDecoder: customDecoder
+                             ,Decoder: Decoder};
    return _elm.Json.Decode.values;
 };
 Elm.Json = Elm.Json || {};
@@ -3696,16 +3713,16 @@ Elm.Json.Encode.make = function (_elm) {
    var encode = $Native$Json.encode;
    var Value = {ctor: "Value"};
    _elm.Json.Encode.values = {_op: _op
-                             ,Value: Value
                              ,encode: encode
                              ,string: string
                              ,$int: $int
                              ,$float: $float
                              ,bool: bool
                              ,$null: $null
-                             ,object: object
+                             ,list: list
                              ,array: array
-                             ,list: list};
+                             ,object: object
+                             ,Value: Value};
    return _elm.Json.Encode.values;
 };
 Elm.List = Elm.List || {};
@@ -3825,7 +3842,7 @@ Elm.List.make = function (_elm) {
             case "[]":
             return $Maybe.Nothing;}
          _U.badCase($moduleName,
-         "between lines 87 and 95");
+         "between lines 87 and 89");
       }();
    };
    var head = function (list) {
@@ -3836,7 +3853,7 @@ Elm.List.make = function (_elm) {
             case "[]":
             return $Maybe.Nothing;}
          _U.badCase($moduleName,
-         "between lines 75 and 84");
+         "between lines 75 and 77");
       }();
    };
    _op["::"] = $Native$List.cons;
@@ -3875,7 +3892,7 @@ Elm.List.make = function (_elm) {
             return A2(_op["::"],_v15._0,xs);
             case "Nothing": return xs;}
          _U.badCase($moduleName,
-         "between lines 179 and 186");
+         "between lines 179 and 181");
       }();
    });
    var filterMap = F2(function (f,
@@ -4022,7 +4039,7 @@ Elm.List.make = function (_elm) {
             case "[]":
             return _L.fromArray([]);}
          _U.badCase($moduleName,
-         "between lines 350 and 361");
+         "between lines 350 and 356");
       }();
    });
    _elm.List.values = {_op: _op
@@ -4074,10 +4091,14 @@ Elm.Markdown.make = function (_elm) {
    _U = _N.Utils.make(_elm),
    _L = _N.List.make(_elm),
    $moduleName = "Markdown",
+   $Basics = Elm.Basics.make(_elm),
    $Graphics$Element = Elm.Graphics.Element.make(_elm),
    $Html = Elm.Html.make(_elm),
+   $List = Elm.List.make(_elm),
    $Maybe = Elm.Maybe.make(_elm),
-   $Native$Markdown = Elm.Native.Markdown.make(_elm);
+   $Native$Markdown = Elm.Native.Markdown.make(_elm),
+   $Result = Elm.Result.make(_elm),
+   $Signal = Elm.Signal.make(_elm);
    var toElementWith = $Native$Markdown.toElementWith;
    var toHtmlWith = $Native$Markdown.toHtmlWith;
    var defaultOptions = {_: {}
@@ -4132,7 +4153,7 @@ Elm.Maybe.make = function (_elm) {
             case "Nothing":
             return $default;}
          _U.badCase($moduleName,
-         "between lines 45 and 56");
+         "between lines 45 and 47");
       }();
    });
    var Nothing = {ctor: "Nothing"};
@@ -4145,11 +4166,11 @@ Elm.Maybe.make = function (_elm) {
                     case "Nothing":
                     return oneOf(maybes._1);}
                  _U.badCase($moduleName,
-                 "between lines 64 and 73");
+                 "between lines 64 and 66");
               }();
             case "[]": return Nothing;}
          _U.badCase($moduleName,
-         "between lines 59 and 73");
+         "between lines 59 and 66");
       }();
    };
    var andThen = F2(function (maybeValue,
@@ -4174,7 +4195,7 @@ Elm.Maybe.make = function (_elm) {
             return Just(f(maybe._0));
             case "Nothing": return Nothing;}
          _U.badCase($moduleName,
-         "between lines 76 and 107");
+         "between lines 76 and 78");
       }();
    });
    _elm.Maybe.values = {_op: _op
@@ -8159,7 +8180,7 @@ Elm.Native.Port.make = function(localRuntime) {
 				"Regarding the port named '" + name + "' with type:\n\n" +
 				"    " + type.split('\n').join('\n        ') + "\n\n" +
 				"You just sent the value:\n\n" +
-				"    " + JSON.stringify(arg.value) + "\n\n" +
+				"    " + JSON.stringify(value) + "\n\n" +
 				"but it cannot be converted to the necessary type.\n" +
 				e.message
 			);
@@ -8380,6 +8401,8 @@ if (!Elm.fullscreen) {
 			inputs = rootNode.kids;
 			filterListeners(inputs, listeners);
 
+			addReceivers(elm.ports);
+
 			if (typeof moduleToReplace !== 'undefined')
 			{
 				hotSwap(moduleToReplace, elm);
@@ -8462,6 +8485,31 @@ if (!Elm.fullscreen) {
 			{
 				var listener = listeners[i];
 				listener.domNode.removeEventListener(listener.eventName, listener.func);
+			}
+		}
+
+		// add receivers for built-in ports if they are defined
+		function addReceivers(ports)
+		{
+			if ('title' in ports)
+			{
+				if (typeof ports.title === 'string')
+				{
+					document.title = ports.title;
+				}
+				else
+				{
+					ports.title.subscribe(function(v) { document.title = v; });
+				}
+			}
+			if ('redirect' in ports)
+			{
+				ports.redirect.subscribe(function(v) {
+					if (v.length > 0)
+					{
+						window.location = v;
+					}
+				});
 			}
 		}
 
@@ -8966,9 +9014,7 @@ Elm.Native.Show.make = function(localRuntime) {
 		}
 		if (type === 'object' && 'notify' in v && 'id' in v)
 		{
-			return 'initialValue' in v
-				? '<Signal>'
-				: '<Stream>';
+			return '<Signal>';
 		}
 		return "<internal structure>";
 	};
@@ -12983,7 +13029,7 @@ Elm.Result.make = function (_elm) {
             case "Ok":
             return $Maybe.Just(result._0);}
          _U.badCase($moduleName,
-         "between lines 164 and 177");
+         "between lines 164 and 166");
       }();
    };
    var Err = function (a) {
@@ -12998,7 +13044,7 @@ Elm.Result.make = function (_elm) {
             case "Ok":
             return callback(result._0);}
          _U.badCase($moduleName,
-         "between lines 126 and 145");
+         "between lines 126 and 128");
       }();
    });
    var Ok = function (a) {
@@ -13012,7 +13058,7 @@ Elm.Result.make = function (_elm) {
             case "Ok":
             return Ok(func(ra._0));}
          _U.badCase($moduleName,
-         "between lines 41 and 52");
+         "between lines 41 and 43");
       }();
    });
    var map2 = F3(function (func,
@@ -13166,7 +13212,7 @@ Elm.Result.make = function (_elm) {
                  return Err(_v39._4._0);}
               break;}
          _U.badCase($moduleName,
-         "between lines 82 and 123");
+         "between lines 82 and 88");
       }();
    });
    var formatError = F2(function (f,
@@ -13178,7 +13224,7 @@ Elm.Result.make = function (_elm) {
             case "Ok":
             return Ok(result._0);}
          _U.badCase($moduleName,
-         "between lines 148 and 161");
+         "between lines 148 and 150");
       }();
    });
    var fromMaybe = F2(function (err,
@@ -13221,6 +13267,9 @@ Elm.SideBar.make = function (_elm) {
    $Basics = Elm.Basics.make(_elm),
    $Graphics$Element = Elm.Graphics.Element.make(_elm),
    $Html = Elm.Html.make(_elm),
+   $List = Elm.List.make(_elm),
+   $Maybe = Elm.Maybe.make(_elm),
+   $Result = Elm.Result.make(_elm),
    $SideBar$Controls = Elm.SideBar.Controls.make(_elm),
    $SideBar$Model = Elm.SideBar.Model.make(_elm),
    $SideBar$Watches = Elm.SideBar.Watches.make(_elm),
@@ -13367,7 +13416,9 @@ Elm.SideBar.Controls.make = function (_elm) {
    $Graphics$Collage = Elm.Graphics.Collage.make(_elm),
    $Graphics$Element = Elm.Graphics.Element.make(_elm),
    $Graphics$Input = Elm.Graphics.Input.make(_elm),
+   $List = Elm.List.make(_elm),
    $Maybe = Elm.Maybe.make(_elm),
+   $Result = Elm.Result.make(_elm),
    $SideBar$Model = Elm.SideBar.Model.make(_elm),
    $Signal = Elm.Signal.make(_elm),
    $Slider = Elm.Slider.make(_elm),
@@ -13767,7 +13818,12 @@ Elm.SideBar.Model.make = function (_elm) {
    _N = Elm.Native,
    _U = _N.Utils.make(_elm),
    _L = _N.List.make(_elm),
-   $moduleName = "SideBar.Model";
+   $moduleName = "SideBar.Model",
+   $Basics = Elm.Basics.make(_elm),
+   $List = Elm.List.make(_elm),
+   $Maybe = Elm.Maybe.make(_elm),
+   $Result = Elm.Result.make(_elm),
+   $Signal = Elm.Signal.make(_elm);
    var update = F2(function (action,
    state) {
       return function () {
@@ -13848,7 +13904,10 @@ Elm.SideBar.Watches.make = function (_elm) {
    $Html = Elm.Html.make(_elm),
    $Html$Attributes = Elm.Html.Attributes.make(_elm),
    $List = Elm.List.make(_elm),
-   $Markdown = Elm.Markdown.make(_elm);
+   $Markdown = Elm.Markdown.make(_elm),
+   $Maybe = Elm.Maybe.make(_elm),
+   $Result = Elm.Result.make(_elm),
+   $Signal = Elm.Signal.make(_elm);
    var noWatches = $Markdown.toHtml("\n\n### <span style=\"font-family: Gotham, Futura, \'Lucida Grande\', sans-serif; font-size: 12pt; color: rgb(170,170,170)\"> You don\'t have any watches! </span>\n\n<span style=\"color: rgb(170,170,170)\">\n<span style=\"font-family: Gotham, Futura, \'Lucida Grande\', sans-serif; font-size: 10pt; color: rgb(170,170,170)\">\nUse [<span style=\"text-decoration:underline; color: rgb(170,170,170)\">Debug.watch</span>](http://package.elm-lang.org/packages/elm-lang/core/latest/Debug#watch)\nto show any value. <br>\n`watch : String -> a -> a`</span>\n\n<span style=\"font-family: Gotham, Futura, \'Lucida Grande\', sans-serif; font-size: 10pt; color: rgb(170,170,170)\">\nUse [<span style=\"text-decoration:underline; color: rgb(170,170,170)\">Debug.watchSummary</span>](http://package.elm-lang.org/packages/elm-lang/core/latest/Debug#watchSummary) to show a <br>\nsummary or subvalue of any value. </span><br>\n\n");
    var valueAttributes = _L.fromArray([$Html$Attributes.style(_L.fromArray([{ctor: "_Tuple2"
                                                                             ,_0: "margin"
@@ -14023,7 +14082,7 @@ Elm.Signal.make = function (_elm) {
             case "[]":
             return $Debug.crash("mergeMany was given an empty list!");}
          _U.badCase($moduleName,
-         "between lines 177 and 197");
+         "between lines 177 and 182");
       }();
    };
    var foldp = $Native$Signal.foldp;
@@ -14076,8 +14135,12 @@ Elm.Slider.make = function (_elm) {
    _U = _N.Utils.make(_elm),
    _L = _N.List.make(_elm),
    $moduleName = "Slider",
+   $Basics = Elm.Basics.make(_elm),
    $Graphics$Element = Elm.Graphics.Element.make(_elm),
+   $List = Elm.List.make(_elm),
+   $Maybe = Elm.Maybe.make(_elm),
    $Native$Slider = Elm.Native.Slider.make(_elm),
+   $Result = Elm.Result.make(_elm),
    $Signal = Elm.Signal.make(_elm);
    var slider = $Native$Slider.slider;
    var defaultSlider = {_: {}
@@ -14598,9 +14661,13 @@ Elm.VirtualDom.make = function (_elm) {
    _U = _N.Utils.make(_elm),
    _L = _N.List.make(_elm),
    $moduleName = "VirtualDom",
+   $Basics = Elm.Basics.make(_elm),
    $Graphics$Element = Elm.Graphics.Element.make(_elm),
    $Json$Decode = Elm.Json.Decode.make(_elm),
+   $List = Elm.List.make(_elm),
+   $Maybe = Elm.Maybe.make(_elm),
    $Native$VirtualDom = Elm.Native.VirtualDom.make(_elm),
+   $Result = Elm.Result.make(_elm),
    $Signal = Elm.Signal.make(_elm);
    var lazy3 = $Native$VirtualDom.lazy3;
    var lazy2 = $Native$VirtualDom.lazy2;
@@ -14659,10 +14726,12 @@ Elm.Window.make = function (_elm) {
 (function() {
 'use strict';
 
-function assert(bool, msg) {
-    if (!bool) {
-        throw new Error("Assertion error: " + msg);
-    }
+function assert(bool, msg)
+{
+	if (!bool)
+	{
+		throw new Error("Assertion error: " + msg);
+	}
 }
 
 
@@ -14675,68 +14744,74 @@ var SIDE_BAR_WIDTH = 275;
 var DARK_GREY = "#4A4A4A";
 var LIGHT_GREY = "#E4E4E4";
 
-function createSideBar() {
-    var debuggingPanelExpanded = true;
+function createSideBar()
+{
+	var debuggingPanelExpanded = true;
 
-    var sideBar = document.createElement("div");
-    sideBar.id = SIDE_BAR_ID;
+	var sideBar = document.createElement("div");
+	sideBar.id = SIDE_BAR_ID;
 
-    var sideBarBody = document.createElement("div");
-    sideBarBody.id = SIDE_BAR_BODY_ID;
-    sideBarBody.style.overflow = "hidden";
-    sideBarBody.style.height = "100%";
+	var sideBarBody = document.createElement("div");
+	sideBarBody.id = SIDE_BAR_BODY_ID;
+	sideBarBody.style.overflow = "hidden";
+	sideBarBody.style.height = "100%";
 
-    // Create and style the panel
-    sideBar.style.background = DARK_GREY;
-    sideBar.style.width = SIDE_BAR_WIDTH + "px";
-    sideBar.style.height = "100%";
-    sideBar.style.position = "absolute";
-    sideBar.style.top = "0px";
-    sideBar.style.right = "0px";
-    sideBar.style.transitionDuration = "0.3s";
-    sideBar.style.opacity = 0.97;
-    sideBar.style.zIndex = 1;
+	// Create and style the panel
+	sideBar.style.background = DARK_GREY;
+	sideBar.style.width = SIDE_BAR_WIDTH + "px";
+	sideBar.style.height = "100%";
+	sideBar.style.position = "absolute";
+	sideBar.style.top = "0px";
+	sideBar.style.right = "0px";
+	sideBar.style.transitionDuration = "0.3s";
+	sideBar.style.opacity = 0.97;
+	sideBar.style.zIndex = 1;
 
-    // Prevent clicks from reaching the main elm instance under the panel
-    sideBar.addEventListener("click", blockClicks);
-    function blockClicks(e) {
-        var event = e || window.event;
-        event.cancelBubble = true;
-        if (event.stopPropagation) {
-            event.stopPropagation();
-        }
-    }
+	// Prevent clicks from reaching the main elm instance under the panel
+	sideBar.addEventListener("click", blockClicks);
+	function blockClicks(e)
+	{
+		var event = e || window.event;
+		event.cancelBubble = true;
+		if (event.stopPropagation)
+		{
+			event.stopPropagation();
+		}
+	}
 
-    // Create and style the button
-    var tabWidth = 25;
-    var sideBarTab = document.createElement("div");
-    sideBarTab.id = "debugToggle";
-    sideBarTab.style.position = "absolute";
-    sideBarTab.style.width = tabWidth + "px";
-    sideBarTab.style.height = "60px";
-    sideBarTab.style.top = "50%";
-    sideBarTab.style.left = "-" + tabWidth + "px";
-    sideBarTab.style.borderTopLeftRadius = "3px";
-    sideBarTab.style.borderBottomLeftRadius = "3px";
-    sideBarTab.style.background = DARK_GREY;
+	// Create and style the button
+	var tabWidth = 25;
+	var sideBarTab = document.createElement("div");
+	sideBarTab.id = "debugToggle";
+	sideBarTab.style.position = "absolute";
+	sideBarTab.style.width = tabWidth + "px";
+	sideBarTab.style.height = "60px";
+	sideBarTab.style.top = "50%";
+	sideBarTab.style.left = "-" + tabWidth + "px";
+	sideBarTab.style.borderTopLeftRadius = "3px";
+	sideBarTab.style.borderBottomLeftRadius = "3px";
+	sideBarTab.style.background = DARK_GREY;
 
 
-    // Wire the button
-    sideBarTab.onclick = function() {
-        var toolPanel = document.getElementById(SIDE_BAR_ID);
-        if (debuggingPanelExpanded){
-            toolPanel.style.width = "0px";
-            debuggingPanelExpanded = false;
-        } else {
-            toolPanel.style.right = "0px";
-            toolPanel.style.width = SIDE_BAR_WIDTH + "px";
-            debuggingPanelExpanded = true;
-        }
-    };
+	// Wire the button
+	sideBarTab.onclick = function() {
+		var toolPanel = document.getElementById(SIDE_BAR_ID);
+		if (debuggingPanelExpanded)
+		{
+			toolPanel.style.width = "0px";
+			debuggingPanelExpanded = false;
+		}
+		else
+		{
+			toolPanel.style.right = "0px";
+			toolPanel.style.width = SIDE_BAR_WIDTH + "px";
+			debuggingPanelExpanded = true;
+		}
+	};
 
-    sideBar.appendChild(sideBarTab);
-    sideBar.appendChild(sideBarBody);
-    return sideBar;
+	sideBar.appendChild(sideBarTab);
+	sideBar.appendChild(sideBarBody);
+	return sideBar;
 }
 
 
@@ -14744,20 +14819,21 @@ function createSideBar() {
 
 var ERROR_MESSAGE_ID = 'elm-reactor-error-message';
 
-function initErrorMessage(message) {
-    var node = document.createElement("pre");
-    node.id = ERROR_MESSAGE_ID;
-    node.innerHTML = message;
-    node.style.zindex = 1;
-    node.style.position = "absolute";
-    node.style.top = "0";
-    node.style.left = "0";
-    node.style.color = DARK_GREY;
-    node.style.backgroundColor = LIGHT_GREY;
-    node.style.padding = "1em";
-    node.style.margin = "1em";
-    node.style.borderRadius = "10px";
-    return node;
+function initErrorMessage(message)
+{
+	var node = document.createElement("pre");
+	node.id = ERROR_MESSAGE_ID;
+	node.innerHTML = message;
+	node.style.zindex = 1;
+	node.style.position = "absolute";
+	node.style.top = "0";
+	node.style.left = "0";
+	node.style.color = DARK_GREY;
+	node.style.backgroundColor = LIGHT_GREY;
+	node.style.padding = "1em";
+	node.style.margin = "1em";
+	node.style.borderRadius = "10px";
+	return node;
 }
 
 
@@ -14766,54 +14842,63 @@ function initErrorMessage(message) {
 var EVENT_BLOCKER_ID = 'elm-reactor-event-blocker'
 
 var eventsToIgnore = [
-    "click", "mousemove", "mouseup", "mousedown", "mouseclick", "keydown",
-    "keypress", "keyup", "touchstart", "touchend", "touchcancel", "touchleave",
-    "touchmove", "pointermove", "pointerdown", "pointerup", "pointerover",
-    "pointerout", "pointerenter", "pointerleave", "pointercancel"
+	"click", "mousemove", "mouseup", "mousedown", "mouseclick", "keydown",
+	"keypress", "keyup", "touchstart", "touchend", "touchcancel", "touchleave",
+	"touchmove", "pointermove", "pointerdown", "pointerup", "pointerover",
+	"pointerout", "pointerenter", "pointerleave", "pointercancel"
 ];
 
-function ignore(e) {
-    var event = e || window.event;
-    if (event.stopPropagation) {
-        event.stopPropagation();
-    }
-    if (event.cancelBubble !== null) {
-        event.cancelBubble = true;
-    }
-    if (event.preventDefault) {
-        event.preventDefault();
-    }
-    return false;
+function ignore(e)
+{
+	var event = e || window.event;
+	if (event.stopPropagation)
+	{
+		event.stopPropagation();
+	}
+	if (event.cancelBubble !== null)
+	{
+		event.cancelBubble = true;
+	}
+	if (event.preventDefault)
+	{
+		event.preventDefault();
+	}
+	return false;
 }
 
-function initEventBlocker() {
-    var node = document.createElement("div");
-    node.id = EVENT_BLOCKER_ID;
-    node.style.position = "absolute";
-    node.style.top = "0px";
-    node.style.left = "0px";
-    node.style.width = "100%";
-    node.style.height = "100%";
+function initEventBlocker()
+{
+	var node = document.createElement("div");
+	node.id = EVENT_BLOCKER_ID;
+	node.style.position = "absolute";
+	node.style.top = "0px";
+	node.style.left = "0px";
+	node.style.width = "100%";
+	node.style.height = "100%";
 
-    for (var i = eventsToIgnore.length; i-- ;) {
-        node.addEventListener(eventsToIgnore[i], ignore, true);
-    }
+	for (var i = eventsToIgnore.length; i-- ;)
+	{
+		node.addEventListener(eventsToIgnore[i], ignore, true);
+	}
 
-    return node;
+	return node;
 }
 
-function addEventBlocker(node) {
-    if (!document.getElementById(EVENT_BLOCKER_ID)) {
-        node.appendChild(initEventBlocker());
-    }
+function addEventBlocker(node)
+{
+	if (!document.getElementById(EVENT_BLOCKER_ID))
+	{
+		node.appendChild(initEventBlocker());
+	}
 }
 
-function removeEventBlocker() {
-    var blocker = document.getElementById(EVENT_BLOCKER_ID);
-    if (blocker)
-    {
-        blocker.parentNode.removeChild(blocker);
-    }
+function removeEventBlocker()
+{
+	var blocker = document.getElementById(EVENT_BLOCKER_ID);
+	if (blocker)
+	{
+		blocker.parentNode.removeChild(blocker);
+	}
 }
 
 
@@ -14821,91 +14906,96 @@ function removeEventBlocker() {
 // CODE TO SET UP A MODULE FOR DEBUGGING
 
 Elm.fullscreenDebug = function(moduleName, fileName) {
-    var result = initModuleWithDebugState(moduleName);
+	var result = initModuleWithDebugState(moduleName);
 
-    document.body.appendChild(createSideBar());
+	document.body.appendChild(createSideBar());
 
-    var sideBar = Elm.embed(Elm.SideBar, document.getElementById(SIDE_BAR_BODY_ID), {
-        eventCounter: 0,
-        watches: [],
-        showSwap: true
-    });
+	var sideBar = Elm.embed(Elm.SideBar, document.getElementById(SIDE_BAR_BODY_ID), {
+		eventCounter: 0,
+		watches: [],
+		showSwap: true
+	});
 
-    function updateWatches(index)
-    {
-        sideBar.ports.watches.send(watchesAt(index, result.debugState)); 
-    }
+	function updateWatches(index)
+	{
+		sideBar.ports.watches.send(watchesAt(index, result.debugState));
+	}
 
-    sideBar.ports.scrubTo.subscribe(function(index) {
-        jumpTo(index, result.debugState);
-        updateWatches(index);
-    });
+	sideBar.ports.scrubTo.subscribe(function(index) {
+		jumpTo(index, result.debugState);
+		updateWatches(index);
+	});
 
-    sideBar.ports.pause.subscribe(function(paused) {
-        if (paused) {
-            pause(result.debugState);
-        } else {
-            unpause(result.debugState);
-            redoTraces(result.debugState);
-        }
-    });
+	sideBar.ports.pause.subscribe(function(paused) {
+		if (paused)
+		{
+			pause(result.debugState);
+		}
+		else
+		{
+			unpause(result.debugState);
+			redoTraces(result.debugState);
+		}
+	});
 
-    sideBar.ports.restart.subscribe(function() {
-        restart(result.debugState);
-        updateWatches(0);
-    });
+	sideBar.ports.restart.subscribe(function() {
+		restart(result.debugState);
+		updateWatches(0);
+	});
 
-    sideBar.ports.permitSwap.subscribe(function(permitSwaps) {
-        result.debugState.permitSwaps = permitSwaps;
-    });
+	sideBar.ports.permitSwap.subscribe(function(permitSwaps) {
+		result.debugState.permitSwaps = permitSwaps;
+	});
 
-    result.debugState.onNotify = function(debugState) {
-        sideBar.ports.eventCounter.send(debugState.index);
-        updateWatches(debugState.index);
-    };
+	result.debugState.onNotify = function(debugState) {
+		sideBar.ports.eventCounter.send(debugState.index);
+		updateWatches(debugState.index);
+	};
 
-    // handle swaps
-    var updates = 'ws://' + window.location.host + '/socket?file=' + fileName
-    var connection = new WebSocket(updates);
-    connection.addEventListener('message', function(event) {
-        if (result.debugState.permitSwaps)
-        {
-            result = swap(event.data, result.debugState, result.module.dispose);
-            updateWatches(result.debugState.index);
-        }
-    });
-    window.addEventListener("unload", function() {
-        connection.close();
-    });
+	// handle swaps
+	var updates = 'ws://' + window.location.host + '/socket?file=' + fileName
+	var connection = new WebSocket(updates);
+	connection.addEventListener('message', function(event) {
+		if (result.debugState.permitSwaps)
+		{
+			result = swap(event.data, result);
+			updateWatches(result.debugState.index);
+		}
+	});
+	window.addEventListener("unload", function() {
+		connection.close();
+	});
 
-    return result.module;
+	return result.module;
 };
 
 
-function initModuleWithDebugState(moduleName) {
-    var debugState;
+function initModuleWithDebugState(moduleName)
+{
+	var debugState;
 
-    function make(localRuntime) {
-        var result = initAndWrap(getModule(moduleName), localRuntime);
-        debugState = result.debugState;
-        return result.values;
-    }
+	function make(localRuntime)
+	{
+		var result = initAndWrap(getModule(moduleName), localRuntime);
+		debugState = result.debugState;
+		return result.values;
+	}
 
-    return {
-        module: Elm.fullscreen({ make: make }),
-        debugState: debugState
-    };
+	return {
+		module: Elm.fullscreen({ make: make }),
+		debugState: debugState
+	};
 }
 
 function getModule(moduleName)
 {
-    var elmModule = Elm;
-    var names = moduleName.split('.');
-    for (var i = 0; i < names.length; ++i)
-    {
-        elmModule = elmModule[names[i]];
-    }
-    return elmModule;
+	var elmModule = Elm;
+	var names = moduleName.split('.');
+	for (var i = 0; i < names.length; ++i)
+	{
+		elmModule = elmModule[names[i]];
+	}
+	return elmModule;
 }
 
 
@@ -14913,197 +15003,199 @@ function getModule(moduleName)
 
 function emptyDebugState()
 {
-    return {
-        paused: false,
-        pausedAtTime: 0,
-        totalTimeLost: 0,
+	return {
+		paused: false,
+		pausedAtTime: 0,
+		totalTimeLost: 0,
 
-        index: 0,
-        events: [],
-        watches: [{}],
-        snapshots: [],
-        asyncCallbacks: [],
+		index: 0,
+		events: [],
+		watches: [{}],
+		snapshots: [],
+		asyncCallbacks: [],
 
-        initialSnapshot: [],
-        initialAsyncCallbacks: [],
-        signalGraphNodes: [],
+		initialSnapshot: [],
+		initialAsyncCallbacks: [],
+		signalGraphNodes: [],
 
-        traces: {},
-        traceCanvas: createCanvas(),
+		traces: {},
+		traceCanvas: createCanvas(),
 
-        permitSwaps: true,
-        swapInProgress: false,
+		permitSwaps: true,
+		swapInProgress: false,
 
-        onNotify: function() {},
-        refreshScreen: function() {},
-        node: null,
-        notify: function() {}
-    };
+		onNotify: function() {},
+		refreshScreen: function() {},
+		node: null,
+		notify: function() {}
+	};
 }
 
 function restart(debugState)
 {
-    var running = !debugState.paused;
-    if (running)
-    {
-        pause(debugState);
-    }
-    debugState.index = 0;
-    debugState.events = [];
-    debugState.watches = [debugState.watches[0]];
+	var running = !debugState.paused;
+	if (running)
+	{
+		pause(debugState);
+	}
+	debugState.index = 0;
+	debugState.events = [];
+	debugState.watches = [debugState.watches[0]];
 
-    var snap = debugState.initialSnapshot;
-    debugState.snapshots = [snap];
-    for (var i = snap.length; i--; )
-    {
-        debugState.signalGraphNodes[i].value = snap[i].value;
-    }
+	var snap = debugState.initialSnapshot;
+	debugState.snapshots = [snap];
+	for (var i = snap.length; i--; )
+	{
+		debugState.signalGraphNodes[i].value = snap[i].value;
+	}
 
-    debugState.asyncCallbacks = debugState.initialAsyncCallbacks.map(function(thunk) {
-        return {
-            thunk: thunk,
-            id: 0,
-            executed: false
-        };
-    });
+	debugState.asyncCallbacks = debugState.initialAsyncCallbacks.map(function(thunk) {
+		return {
+			thunk: thunk,
+			id: 0,
+			executed: false
+		};
+	});
 
-    debugState.traces = {};
-    redoTraces(debugState);
-    debugState.refreshScreen();
+	debugState.traces = {};
+	redoTraces(debugState);
+	debugState.refreshScreen();
 
-    if (running)
-    {
-        unpause(debugState);
-    }
+	if (running)
+	{
+		unpause(debugState);
+	}
 }
 
 function pause(debugState)
 {
-    if (debugState.paused)
-    {
-        return;
-    }
-    debugState.paused = true;
-    pauseAsyncCallbacks(debugState);
-    debugState.pausedAtTime = Date.now();
-    addEventBlocker(debugState.node);
+	if (debugState.paused)
+	{
+		return;
+	}
+	debugState.paused = true;
+	pauseAsyncCallbacks(debugState);
+	debugState.pausedAtTime = Date.now();
+	addEventBlocker(debugState.node);
 }
 
 function unpause(debugState)
 {
-    debugState.paused = false;
+	debugState.paused = false;
 
-    // add delay due to the pause itself
-    var pauseDelay = Date.now() - debugState.pausedAtTime;
-    debugState.totalTimeLost += pauseDelay;
+	// add delay due to the pause itself
+	var pauseDelay = Date.now() - debugState.pausedAtTime;
+	debugState.totalTimeLost += pauseDelay;
 
-    // add delay if travelling to older event
-    if (debugState.index < debugState.events.length - 1)
-    {
-        debugState.totalTimeLost = Date.now() - debugState.events[debugState.index].time;
-    }
+	// add delay if travelling to older event
+	if (debugState.index < debugState.events.length - 1)
+	{
+		debugState.totalTimeLost = Date.now() - debugState.events[debugState.index].time;
+	}
 
-    // clear out future snapshots, events, and traces
-    var nearestSnapshotIndex = Math.floor(debugState.index / EVENTS_PER_SAVE);
-    debugState.snapshots = debugState.snapshots.slice(0, nearestSnapshotIndex + 1);
-    debugState.events = debugState.events.slice(0, debugState.index);
-    clearTracesAfter(debugState.index, debugState);
-    clearWatchesAfter(debugState.index, debugState);
+	// clear out future snapshots, events, and traces
+	var nearestSnapshotIndex = Math.floor(debugState.index / EVENTS_PER_SAVE);
+	debugState.snapshots = debugState.snapshots.slice(0, nearestSnapshotIndex + 1);
+	debugState.events = debugState.events.slice(0, debugState.index);
+	clearTracesAfter(debugState.index, debugState);
+	clearWatchesAfter(debugState.index, debugState);
 
-    unpauseAsyncCallbacks(debugState.asyncCallbacks);
+	unpauseAsyncCallbacks(debugState.asyncCallbacks);
 
-    removeEventBlocker();
+	removeEventBlocker();
 }
 
 function jumpTo(index, debugState)
 {
-    if (!debugState.paused)
-    {
-        pause(debugState);
-    }
+	if (!debugState.paused)
+	{
+		pause(debugState);
+	}
 
-    assert(
-        0 <= index && index <= debugState.events.length,
-        "Trying to step to non-existent event index " + index);
+	assert(
+		0 <= index && index <= debugState.events.length,
+		"Trying to step to non-existent event index " + index
+	);
 
-    var potentialIndex = indexOfSnapshotBefore(index);
-    if (index < debugState.index || potentialIndex > debugState.index)
-    {
-        var snapshot = getNearestSnapshot(index, debugState.snapshots);
+	var potentialIndex = indexOfSnapshotBefore(index);
+	if (index < debugState.index || potentialIndex > debugState.index)
+	{
+		var snapshot = getNearestSnapshot(index, debugState.snapshots);
 
-        for (var i = debugState.signalGraphNodes.length; i-- ; )
-        {
-            debugState.signalGraphNodes[i].value = snapshot[i].value;
-        }
+		for (var i = debugState.signalGraphNodes.length; i-- ; )
+		{
+			debugState.signalGraphNodes[i].value = snapshot[i].value;
+		}
 
-        debugState.index = potentialIndex;
-    }
+		debugState.index = potentialIndex;
+	}
 
-    while (debugState.index < index)
-    {
-        var event = debugState.events[debugState.index];
-        debugState.notify(event.id, event.value);
-        debugState.index += 1;
-    }
-    redoTraces(debugState);
+	while (debugState.index < index)
+	{
+		var event = debugState.events[debugState.index];
+		debugState.notify(event.id, event.value);
+		debugState.index += 1;
+	}
+	redoTraces(debugState);
 }
 
-function swap(rawJsonResponse, debugState, freeOldRuntime) {
-    var error = document.getElementById(ERROR_MESSAGE_ID);
-    if (error)
-    {
-        error.parentNode.removeChild(error);
-    }
+function swap(rawJsonResponse, oldResult)
+{
+	var error = document.getElementById(ERROR_MESSAGE_ID);
+	if (error)
+	{
+		error.parentNode.removeChild(error);
+	}
 
-    var result = JSON.parse(rawJsonResponse);
+	var response = JSON.parse(rawJsonResponse);
 
-    if (!result.code)
-    {
-        var msg = result.error || 'something went wrong with swap';
-        document.body.appendChild(initErrorMessage(msg));
-        return null;
-    }
-    // TODO: pause/unpause?
-    pauseAsyncCallbacks(debugState);
-    window.eval(result.code);
+	if (!response.code)
+	{
+		var msg = response.error || 'something went wrong with swap';
+		document.body.appendChild(initErrorMessage(msg));
+		return oldResult;
+	}
+	// TODO: pause/unpause?
+	pauseAsyncCallbacks(oldResult.debugState);
+	window.eval(response.code);
 
-    // remove old nodes
-    debugState.node.parentNode.removeChild(debugState.node);
-    document.body.removeChild(debugState.traceCanvas);
-    freeOldRuntime();
+	// remove old nodes
+	oldResult.debugState.node.parentNode.removeChild(oldResult.debugState.node);
+	document.body.removeChild(oldResult.debugState.traceCanvas);
+	oldResult.module.dispose();
 
-    var result = initModuleWithDebugState(result.name);
-    transferState(debugState, result.debugState);
-    return result;
+	var result = initModuleWithDebugState(response.name);
+	transferState(oldResult.debugState, result.debugState);
+	return result;
 }
 
 function transferState(previousDebugState, debugState)
 {
-    debugState.swapInProgress = true;
-    debugState.events = previousDebugState.events;
-    debugState.onNotify = previousDebugState.onNotify;
+	debugState.swapInProgress = true;
+	debugState.events = previousDebugState.events;
+	debugState.onNotify = previousDebugState.onNotify;
 
-    if (previousDebugState.paused)
-    {
-        debugState.paused = true;
-        pauseAsyncCallbacks(debugState);
-        debugState.pausedAtTime = previousDebugState.pausedAtTime;
-        debugState.totalTimeLost = previousDebugState.totalTimeLost;
-        addEventBlocker(debugState.node);
-    }
+	if (previousDebugState.paused)
+	{
+		debugState.paused = true;
+		pauseAsyncCallbacks(debugState);
+		debugState.pausedAtTime = previousDebugState.pausedAtTime;
+		debugState.totalTimeLost = previousDebugState.totalTimeLost;
+		addEventBlocker(debugState.node);
+	}
 
-    while (debugState.index < debugState.events.length)
-    {
-        var event = debugState.events[debugState.index];
-        pushWatchFrame(debugState);
-        debugState.notify(event.id, event.value);
-        debugState.index += 1;
-        snapshotIfNeeded(debugState);
-    }
-    redoTraces(debugState);
-    debugState.swapInProgress = false;
+	while (debugState.index < debugState.events.length)
+	{
+		var event = debugState.events[debugState.index];
+		pushWatchFrame(debugState);
+		debugState.notify(event.id, event.value);
+		debugState.index += 1;
+		snapshotIfNeeded(debugState);
+	}
+	redoTraces(debugState);
+	debugState.swapInProgress = false;
 
-    jumpTo(previousDebugState.index, debugState);
+	jumpTo(previousDebugState.index, debugState);
 }
 
 
@@ -15111,21 +15203,25 @@ function transferState(previousDebugState, debugState)
 
 // TODO: is it weird that the callbacks array never shrinks?
 
-function unpauseAsyncCallbacks(callbacks) {
-    callbacks.forEach(function(callback) {
-        if (!callback.executed) {
-            callback.executed = true;
-            callback.thunk();
-        }
-    });
+function unpauseAsyncCallbacks(callbacks)
+{
+	callbacks.forEach(function(callback) {
+		if (!callback.executed)
+		{
+			callback.executed = true;
+			callback.thunk();
+		}
+	});
 }
 
-function pauseAsyncCallbacks(debugState) {
-    debugState.asyncCallbacks.forEach(function(callback) {
-        if (!callback.executed) {
-            clearTimeout(callback.id);
-        }
-    });
+function pauseAsyncCallbacks(debugState)
+{
+	debugState.asyncCallbacks.forEach(function(callback) {
+		if (!callback.executed)
+		{
+			clearTimeout(callback.id);
+		}
+	});
 }
 
 
@@ -15134,174 +15230,174 @@ function pauseAsyncCallbacks(debugState) {
 
 function clearTracesAfter(index, debugState)
 {
-    var newTraces = {};
-    for (var id in debugState.traces)
-    {
-        var trace = debugState.traces[id];
-        for (var i = trace.length; i--; )
-        {
-            if (trace[i].index < index)
-            {
-                newTraces[id] = debugState.traces[id].slice(0, i + 1);
-                break;
-            }
-        }
-    }
-    debugState.traces = newTraces;
+	var newTraces = {};
+	for (var id in debugState.traces)
+	{
+		var trace = debugState.traces[id];
+		for (var i = trace.length; i--; )
+		{
+			if (trace[i].index < index)
+			{
+				newTraces[id] = debugState.traces[id].slice(0, i + 1);
+				break;
+			}
+		}
+	}
+	debugState.traces = newTraces;
 }
 
 function createCanvas() {
-    var canvas = document.createElement('canvas');
-    // TODO: make dimensions adjust based on screen size
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-    canvas.style.position = "absolute";
-    canvas.style.top = "0";
-    canvas.style.left = "0";
-    canvas.style.pointerEvents = "none";
-    return canvas;
+	var canvas = document.createElement('canvas');
+	// TODO: make dimensions adjust based on screen size
+	canvas.width = window.innerWidth;
+	canvas.height = window.innerHeight;
+	canvas.style.position = "absolute";
+	canvas.style.top = "0";
+	canvas.style.left = "0";
+	canvas.style.pointerEvents = "none";
+	return canvas;
 }
 
 function addTraces(debugState)
 {
-    var ctx = debugState.traceCanvas.getContext('2d');
+	var ctx = debugState.traceCanvas.getContext('2d');
 
-    ctx.save();
-    for (var id in debugState.traces)
-    {
-        var points = debugState.traces[id];
-        if (points.length < 2)
-        {
-            continue;
-        }
-        var lastTracePoint = points[points.length - 1];
-        if (lastTracePoint.index < debugState.index - 1)
-        {
-            continue;
-        }
-        ctx.beginPath();
-        ctx.moveTo(lastTracePoint.x, lastTracePoint.y);
-        var secondToLastTracePoint = points[points.length - 2];
-        ctx.lineTo(secondToLastTracePoint.x, secondToLastTracePoint.y);
+	ctx.save();
+	for (var id in debugState.traces)
+	{
+		var points = debugState.traces[id];
+		if (points.length < 2)
+		{
+			continue;
+		}
+		var lastTracePoint = points[points.length - 1];
+		if (lastTracePoint.index < debugState.index - 1)
+		{
+			continue;
+		}
+		ctx.beginPath();
+		ctx.moveTo(lastTracePoint.x, lastTracePoint.y);
+		var secondToLastTracePoint = points[points.length - 2];
+		ctx.lineTo(secondToLastTracePoint.x, secondToLastTracePoint.y);
 
-        ctx.lineWidth = 1;
-        ctx.strokeStyle = "rgba(50, 50, 50, 0.4)";
-        ctx.stroke();
-    }
-    ctx.restore();
+		ctx.lineWidth = 1;
+		ctx.strokeStyle = "rgba(50, 50, 50, 0.4)";
+		ctx.stroke();
+	}
+	ctx.restore();
 }
 
 function redoTraces(debugState) {
-    var ctx = debugState.traceCanvas.getContext('2d');
+	var ctx = debugState.traceCanvas.getContext('2d');
 
-    // TODO: be more clever about the size of the canvas on resize
-    ctx.clearRect(0, 0, debugState.traceCanvas.width, debugState.traceCanvas.height);
+	// TODO: be more clever about the size of the canvas on resize
+	ctx.clearRect(0, 0, debugState.traceCanvas.width, debugState.traceCanvas.height);
 
-    ctx.save();
-    for (var id in debugState.traces)
-    {
-        var points = debugState.traces[id];
-        var length = points.length;
-        if (length < 2)
-        {
-            continue;
-        }
-        ctx.beginPath();
-        ctx.lineWidth = 1;
-        ctx.moveTo(points[0].x, points[0].y);
-        var currentIndex = debugState.index;
-        var traceIndex = points[0].index;
-        for (var i = 1; traceIndex < currentIndex && i < length; ++i)
-        {
-            var point = points[i];
-            ctx.lineTo(point.x, point.y);
-            traceIndex = point.index;
-        }
-        ctx.strokeStyle = "rgba(50, 50, 50, 0.4)";
-        ctx.stroke();
+	ctx.save();
+	for (var id in debugState.traces)
+	{
+		var points = debugState.traces[id];
+		var length = points.length;
+		if (length < 2)
+		{
+			continue;
+		}
+		ctx.beginPath();
+		ctx.lineWidth = 1;
+		ctx.moveTo(points[0].x, points[0].y);
+		var currentIndex = debugState.index;
+		var traceIndex = points[0].index;
+		for (var i = 1; traceIndex < currentIndex && i < length; ++i)
+		{
+			var point = points[i];
+			ctx.lineTo(point.x, point.y);
+			traceIndex = point.index;
+		}
+		ctx.strokeStyle = "rgba(50, 50, 50, 0.4)";
+		ctx.stroke();
 
-        for (; i < length; ++i)
-        {
-            var point = points[i];
-            ctx.lineTo(point.x, point.y);
-            traceIndex = point.index;
-        }
-        ctx.strokeStyle = "rgba(50, 50, 50, 0.2)";
-        ctx.stroke();
-    }
-    ctx.restore();
+		for (; i < length; ++i)
+		{
+			var point = points[i];
+			ctx.lineTo(point.x, point.y);
+			traceIndex = point.index;
+		}
+		ctx.strokeStyle = "rgba(50, 50, 50, 0.2)";
+		ctx.stroke();
+	}
+	ctx.restore();
 }
 
 function makeTraceRecorder(debugState, runtime)
 {
-    var List = Elm.List.make(runtime);
-    var Transform = Elm.Transform2D.make(runtime);
+	var List = Elm.List.make(runtime);
+	var Transform = Elm.Transform2D.make(runtime);
 
-    function crawlElement(element)
-    {
-        if (debugState.paused && !debugState.swapInProgress)
-        {
-            return;
-        }
+	function crawlElement(element)
+	{
+		if (debugState.paused && !debugState.swapInProgress)
+		{
+			return;
+		}
 
-        var e = element.element;
-        if (!e)
-        {
-            return;
-        }
-        if (e.ctor === 'Custom' && e.type === 'Collage')
-        {
-            var w = element.props.width;
-            var h = element.props.height;
-            var identity = A6( Transform.matrix, 1, 0, 0, -1, w/2, h/2 );
-            return A2(List.map, crawlForm(identity), e.model.forms);
-        }
-    }
+		var e = element.element;
+		if (!e)
+		{
+			return;
+		}
+		if (e.ctor === 'Custom' && e.type === 'Collage')
+		{
+			var w = element.props.width;
+			var h = element.props.height;
+			var identity = A6( Transform.matrix, 1, 0, 0, -1, w/2, h/2 );
+			return A2(List.map, crawlForm(identity), e.model.forms);
+		}
+	}
 
-    function crawlForm(matrix)
-    {
-        return function(form) {
-            if (form.form.ctor == "FGroup")
-            {
-                var scale = form.scale;
-                var localMatrix = A6( Transform.matrix, scale, 0, 0, scale, form.x, form.y );
+	function crawlForm(matrix)
+	{
+		return function(form) {
+			if (form.form.ctor == "FGroup")
+			{
+				var scale = form.scale;
+				var localMatrix = A6( Transform.matrix, scale, 0, 0, scale, form.x, form.y );
 
-                var theta = form.theta
-                if (theta !== 0)
-                {
-                    localMatrix = A2( Transform.multiply, localMatrix, Transform.rotation(theta) );
-                }
+				var theta = form.theta
+				if (theta !== 0)
+				{
+					localMatrix = A2( Transform.multiply, localMatrix, Transform.rotation(theta) );
+				}
 
-                var newMatrix = A2( Transform.multiply, matrix, localMatrix );
-                A2(List.map, crawlForm(newMatrix), form.form._1);
-            }
+				var newMatrix = A2( Transform.multiply, matrix, localMatrix );
+				A2(List.map, crawlForm(newMatrix), form.form._1);
+			}
 
-            var tag = form.trace;
-            if (!tag)
-            {
-                return;
-            }
+			var tag = form.trace;
+			if (!tag)
+			{
+				return;
+			}
 
-            var x = matrix[0] * form.x + matrix[1] * form.y + matrix[2];
-            var y = matrix[3] * form.x + matrix[4] * form.y + matrix[5];
+			var x = matrix[0] * form.x + matrix[1] * form.y + matrix[2];
+			var y = matrix[3] * form.x + matrix[4] * form.y + matrix[5];
 
-            if ( !(tag in debugState.traces) )
-            {
-                debugState.traces[tag] = [{ index: debugState.index, x: x, y: y }];
-                return;
-            }                
+			if ( !(tag in debugState.traces) )
+			{
+				debugState.traces[tag] = [{ index: debugState.index, x: x, y: y }];
+				return;
+			}
 
-            var trace = debugState.traces[tag];
-            var lastPoint = trace[trace.length - 1];
-            if (lastPoint.x === x && lastPoint.y === y)
-            {
-                return;
-            }
-            trace.push({ index: debugState.index, x: x, y: y });
-        }
-    }
+			var trace = debugState.traces[tag];
+			var lastPoint = trace[trace.length - 1];
+			if (lastPoint.x === x && lastPoint.y === y)
+			{
+				return;
+			}
+			trace.push({ index: debugState.index, x: x, y: y });
+		}
+	}
 
-    return crawlElement;
+	return crawlElement;
 }
 
 
@@ -15311,55 +15407,58 @@ var EVENTS_PER_SAVE = 100;
 
 function snapshotIfNeeded(debugState)
 {
-    if (debugState.index % EVENTS_PER_SAVE === 0)
-    {
-        debugState.snapshots.push(createSnapshot(debugState.signalGraphNodes));
-    }
+	if (debugState.index % EVENTS_PER_SAVE === 0)
+	{
+		debugState.snapshots.push(createSnapshot(debugState.signalGraphNodes));
+	}
 }
 
 function indexOfSnapshotBefore(index)
 {
-    return Math.floor(index / EVENTS_PER_SAVE) * EVENTS_PER_SAVE;
+	return Math.floor(index / EVENTS_PER_SAVE) * EVENTS_PER_SAVE;
 }
 
 function getNearestSnapshot(i, snapshots)
 {
-    var snapshotIndex = Math.floor(i / EVENTS_PER_SAVE);
-    assert(
-        snapshotIndex < snapshots.length && snapshotIndex >= 0,
-        "Trying to access non-existent snapshot (event " + i + ", snapshot " + snapshotIndex + ")");
-    return snapshots[snapshotIndex];
+	var snapshotIndex = Math.floor(i / EVENTS_PER_SAVE);
+	assert(
+		snapshotIndex < snapshots.length && snapshotIndex >= 0,
+		"Trying to access non-existent snapshot (event " + i + ", snapshot " + snapshotIndex + ")"
+	);
+	return snapshots[snapshotIndex];
 }
 
 function createSnapshot(signalGraphNodes)
 {
-    var nodeValues = [];
+	var nodeValues = [];
 
-    signalGraphNodes.forEach(function(node) {
-        nodeValues.push({ value: node.value, id: node.id });
-    });
+	signalGraphNodes.forEach(function(node) {
+		nodeValues.push({ value: node.value, id: node.id });
+	});
 
-    return nodeValues;
+	return nodeValues;
 }
 
 function flattenSignalGraph(nodes)
 {
-    var nodesById = {};
+	var nodesById = {};
 
-    function addAllToDict(node) {
-        nodesById[node.id] = node;
-        node.kids.forEach(addAllToDict);
-    }
-    nodes.forEach(addAllToDict);
+	function addAllToDict(node)
+	{
+		nodesById[node.id] = node;
+		node.kids.forEach(addAllToDict);
+	}
+	nodes.forEach(addAllToDict);
 
-    var allNodes = Object.keys(nodesById).sort(compareNumbers).map(function(key) {
-        return nodesById[key];
-    });
-    return allNodes;
+	var allNodes = Object.keys(nodesById).sort(compareNumbers).map(function(key) {
+		return nodesById[key];
+	});
+	return allNodes;
 }
 
-function compareNumbers(a, b) {
-    return a - b;
+function compareNumbers(a, b)
+{
+	return a - b;
 }
 
 
@@ -15367,131 +15466,131 @@ function compareNumbers(a, b) {
 
 function initAndWrap(elmModule, runtime)
 {
-    var debugState = emptyDebugState();
+	var debugState = emptyDebugState();
 
-    // runtime is the prototype of wrappedRuntime
-    // so we can access all runtime properties too
-    var wrappedRuntime = Object.create(runtime);
-    wrappedRuntime.notify = notifyWrapper;
-    wrappedRuntime.setTimeout = setTimeoutWrapper;
+	// runtime is the prototype of wrappedRuntime
+	// so we can access all runtime properties too
+	var wrappedRuntime = Object.create(runtime);
+	wrappedRuntime.notify = notifyWrapper;
+	wrappedRuntime.setTimeout = setTimeoutWrapper;
 
-    // make a copy of the wrappedRuntime
-    var assignedPropTracker = Object.create(wrappedRuntime);
-    var values = elmModule.make(assignedPropTracker);
+	// make a copy of the wrappedRuntime
+	var assignedPropTracker = Object.create(wrappedRuntime);
+	var values = elmModule.make(assignedPropTracker);
 
-    // make sure the signal graph is actually a signal & extract the visual model
-    var Signal = Elm.Signal.make(assignedPropTracker);
-    if ( !('notify' in values.main) )
-    {
-        values.main = Signal.constant(values.main);
-    }
-    A2(Signal.map, makeTraceRecorder(debugState, assignedPropTracker), values.main);
+	// make sure the signal graph is actually a signal & extract the visual model
+	var Signal = Elm.Signal.make(assignedPropTracker);
+	if ( !('notify' in values.main) )
+	{
+		values.main = Signal.constant(values.main);
+	}
+	A2(Signal.map, makeTraceRecorder(debugState, assignedPropTracker), values.main);
 
-    debugState.refreshScreen = function() {
-        var main = values.main
-        for (var i = main.kids.length ; i-- ; )
-        {
-            main.kids[i].notify(runtime.timer.now(), true, main.id);
-        }
-    };
+	debugState.refreshScreen = function() {
+		var main = values.main
+		for (var i = main.kids.length ; i-- ; )
+		{
+			main.kids[i].notify(runtime.timer.now(), true, main.id);
+		}
+	};
 
-    // The main module stores imported modules onto the runtime.
-    // To ensure only one instance of each module is created,
-    // we assign them back on the original runtime object.
-    Object.keys(assignedPropTracker).forEach(function(key) {
-        runtime[key] = assignedPropTracker[key];
-    });
+	// The main module stores imported modules onto the runtime.
+	// To ensure only one instance of each module is created,
+	// we assign them back on the original runtime object.
+	Object.keys(assignedPropTracker).forEach(function(key) {
+		runtime[key] = assignedPropTracker[key];
+	});
 
-    debugState.signalGraphNodes = flattenSignalGraph(wrappedRuntime.inputs);
-    debugState.initialSnapshot = createSnapshot(debugState.signalGraphNodes);
-    debugState.snapshots = [debugState.initialSnapshot];
-    debugState.initialAsyncCallbacks = debugState.asyncCallbacks.map(function(callback) {
-        return callback.thunk;
-    });
-    debugState.node = runtime.node;
-    debugState.notify = runtime.notify;
+	debugState.signalGraphNodes = flattenSignalGraph(wrappedRuntime.inputs);
+	debugState.initialSnapshot = createSnapshot(debugState.signalGraphNodes);
+	debugState.snapshots = [debugState.initialSnapshot];
+	debugState.initialAsyncCallbacks = debugState.asyncCallbacks.map(function(callback) {
+		return callback.thunk;
+	});
+	debugState.node = runtime.node;
+	debugState.notify = runtime.notify;
 
-    // Tracing stuff
-    document.body.appendChild(debugState.traceCanvas);
+	// Tracing stuff
+	document.body.appendChild(debugState.traceCanvas);
 
-    var replace = Elm.Native.Utils.make(assignedPropTracker).replace;
+	var replace = Elm.Native.Utils.make(assignedPropTracker).replace;
 
-    runtime.timer.now = function() {
-        if (debugState.paused || debugState.swapInProgress)
-        {
-            var event = debugState.events[debugState.index];
-            return event.time;
-        }
-        return Date.now() - debugState.totalTimeLost;
-    };
+	runtime.timer.now = function() {
+		if (debugState.paused || debugState.swapInProgress)
+		{
+			var event = debugState.events[debugState.index];
+			return event.time;
+		}
+		return Date.now() - debugState.totalTimeLost;
+	};
 
-    runtime.debug = {};
+	runtime.debug = {};
 
-    runtime.debug.trace = function(tag, form) {
-        return replace([['trace', tag]], form);
-    }
+	runtime.debug.trace = function(tag, form) {
+		return replace([['trace', tag]], form);
+	}
 
-    runtime.debug.watch = function(tag, value) {
-        if (debugState.paused && !debugState.swapInProgress)
-        {
-            return;
-        }
-        var index = debugState.index;
-        var numWatches = debugState.watches.length - 1;
-        assert(
-            index === numWatches,
-            'number of watch frames (' + numWatches + ') should match current index (' + index + ')');
-        debugState.watches[debugState.index][tag] = value;
-    }
+	runtime.debug.watch = function(tag, value) {
+		if (debugState.paused && !debugState.swapInProgress)
+		{
+			return;
+		}
+		var index = debugState.index;
+		var numWatches = debugState.watches.length - 1;
+		assert(
+			index === numWatches,
+			'number of watch frames (' + numWatches + ') should match current index (' + index + ')');
+		debugState.watches[debugState.index][tag] = value;
+	}
 
-    function notifyWrapper(id, value)
-    {
-        // Ignore all events that occur while the program is paused.
-        if (debugState.paused)
-        {
-            return false;
-        }
+	function notifyWrapper(id, value)
+	{
+		// Ignore all events that occur while the program is paused.
+		if (debugState.paused)
+		{
+			return false;
+		}
 
-        // Record the event
-        debugState.events.push({ id: id, value: value, time: runtime.timer.now() });
-        debugState.index += 1;
-        pushWatchFrame(debugState);
+		// Record the event
+		debugState.events.push({ id: id, value: value, time: runtime.timer.now() });
+		debugState.index += 1;
+		pushWatchFrame(debugState);
 
-        var changed = runtime.notify(id, value);
+		var changed = runtime.notify(id, value);
 
-        snapshotIfNeeded(debugState);
-        debugState.onNotify(debugState);
-        addTraces(debugState);
+		snapshotIfNeeded(debugState);
+		debugState.onNotify(debugState);
+		addTraces(debugState);
 
-        return changed;
-    }
+		return changed;
+	}
 
-    function setTimeoutWrapper(thunk, delay)
-    {
-        if (debugState.paused)
-        {
-            return 0;
-        }
+	function setTimeoutWrapper(thunk, delay)
+	{
+		if (debugState.paused)
+		{
+			return 0;
+		}
 
-        var callback = {
-            thunk: thunk,
-            id: 0,
-            executed: false
-        };
+		var callback = {
+			thunk: thunk,
+			id: 0,
+			executed: false
+		};
 
-        callback.id = setTimeout(function() {
-            callback.executed = true;
-            thunk();
-        }, delay);
+		callback.id = setTimeout(function() {
+			callback.executed = true;
+			thunk();
+		}, delay);
 
-        debugState.asyncCallbacks.push(callback);
-        return callback.id;
-    }
+		debugState.asyncCallbacks.push(callback);
+		return callback.id;
+	}
 
-    return {
-        values: values,
-        debugState: debugState
-    };
+	return {
+		values: values,
+		debugState: debugState
+	};
 }
 
 
@@ -15499,155 +15598,157 @@ function initAndWrap(elmModule, runtime)
 
 function watchesAt(index, debugState)
 {
-    var watchSnapshot = [];
-    var watches = debugState.watches[index];
+	var watchSnapshot = [];
+	var watches = debugState.watches[index];
 
-    for (var name in watches)
-    {
-        var value = prettyPrint(watches[name], "  ");
-        watchSnapshot.push([ name, value ]);
-    }
-    return watchSnapshot;
+	for (var name in watches)
+	{
+		var value = prettyPrint(watches[name], "  ");
+		watchSnapshot.push([ name, value ]);
+	}
+	return watchSnapshot;
 }
 
 function pushWatchFrame(debugState)
 {
-    var length = debugState.watches.length;
-    var oldFrame = length === 0 ? {} : debugState.watches[length - 1];
-    var newFrame = {};
-    for (var tag in oldFrame)
-    {
-        newFrame[tag] = oldFrame[tag];
-    }
-    debugState.watches.push(newFrame);
+	var length = debugState.watches.length;
+	var oldFrame = length === 0 ? {} : debugState.watches[length - 1];
+	var newFrame = {};
+	for (var tag in oldFrame)
+	{
+		newFrame[tag] = oldFrame[tag];
+	}
+	debugState.watches.push(newFrame);
 }
 
 function clearWatchesAfter(index, debugState)
 {
-    debugState.watches = debugState.watches.slice(0, index + 1);
+	debugState.watches = debugState.watches.slice(0, index + 1);
 }
 
 var prettyPrint = function() {
 
-    var independentRuntime = {};
-    var List;
-    var ElmArray;
-    var Dict;
+	var independentRuntime = {};
+	var List;
+	var ElmArray;
+	var Dict;
 
-    var toString = function(v, separator) {
-        var type = typeof v;
-        if (type === "function") {
-            var name = v.func ? v.func.name : v.name;
-            return '<function' + (name === '' ? '' : ': ') + name + '>';
-        } else if (type === "boolean") {
-            return v ? "True" : "False";
-        } else if (type === "number") {
-            return v.toFixed(2).replace(/\.0+$/g, '');
-        } else if ((v instanceof String) && v.isChar) {
-            return "'" + addSlashes(v) + "'";
-        } else if (type === "string") {
-            return '"' + addSlashes(v) + '"';
-        } else if (type === "object" && '_' in v && probablyPublic(v)) {
-            var output = [];
-            for (var k in v._) {
-                for (var i = v._[k].length; i--; ) {
-                    output.push(k + " = " + toString(v._[k][i], separator));
-                }
-            }
-            for (var k in v) {
-                if (k === '_') continue;
-                output.push(k + " = " + toString(v[k], separator));
-            }
-            if (output.length === 0) return "{}";
-            var body = "\n" + output.join(",\n");
-            return "{" + body.replace(/\n/g,"\n" + separator) + "\n}";
-        } else if (type === "object" && 'ctor' in v) {
-            if (v.ctor.substring(0,6) === "_Tuple") {
-                var output = [];
-                for (var k in v) {
-                    if (k === 'ctor') continue;
-                    output.push(toString(v[k], separator));
-                }
-                return "(" + output.join(", ") + ")";
-            } else if (v.ctor === "_Array") {
-                if (!ElmArray) {
-                    ElmArray = Elm.Array.make(independentRuntime);
-                }
-                var list = ElmArray.toList(v);
-                return "Array.fromList " + toString(list, separator);
-            } else if (v.ctor === "::") {
-                var output = '[\n' + toString(v._0, separator);
-                v = v._1;
-                while (v && v.ctor === "::") {
-                    output += ",\n" + toString(v._0, separator);
-                    v = v._1;
-                }
-                return output.replace(/\n/g,"\n" + separator) + "\n]";
-            } else if (v.ctor === "[]") {
-                return "[]";
-            } else if (v.ctor === "RBNode" || v.ctor === "RBEmpty") {
-                if (!Dict || !List) {
-                    Dict = Elm.Dict.make(independentRuntime);
-                    List = Elm.List.make(independentRuntime);
-                }
-                var list = Dict.toList(v);
-                var name = "Dict";
-                if (list.ctor === "::" && list._0._1.ctor === "_Tuple0") {
-                    name = "Set";
-                    list = A2(List.map, function(x){return x._0}, list);
-                }
-                return name + ".fromList " + toString(list, separator);
-            } else {
-                var output = "";
-                for (var i in v) {
-                    if (i === 'ctor') continue;
-                    var str = toString(v[i], separator);
-                    var parenless = str[0] === '{' ||
-                                    str[0] === '<' ||
-                                    str[0] === "[" ||
-                                    str.indexOf(' ') < 0;
-                    output += ' ' + (parenless ? str : "(" + str + ')');
-                }
-                return v.ctor + output;
-            }
-        }
-        if (type === 'object' && 'notify' in v) return '<signal>';
-        return "<internal structure>";
-    };
+	var toString = function(v, separator) {
+		var type = typeof v;
+		if (type === "function") {
+			var name = v.func ? v.func.name : v.name;
+			return '<function' + (name === '' ? '' : ': ') + name + '>';
+		} else if (type === "boolean") {
+			return v ? "True" : "False";
+		} else if (type === "number") {
+			return v.toFixed(2).replace(/\.0+$/g, '');
+		} else if ((v instanceof String) && v.isChar) {
+			return "'" + addSlashes(v) + "'";
+		} else if (type === "string") {
+			return '"' + addSlashes(v) + '"';
+		} else if (type === "object" && '_' in v && probablyPublic(v)) {
+			var output = [];
+			for (var k in v._) {
+				for (var i = v._[k].length; i--; ) {
+					output.push(k + " = " + toString(v._[k][i], separator));
+				}
+			}
+			for (var k in v) {
+				if (k === '_') continue;
+				output.push(k + " = " + toString(v[k], separator));
+			}
+			if (output.length === 0) return "{}";
+			var body = "\n" + output.join(",\n");
+			return "{" + body.replace(/\n/g,"\n" + separator) + "\n}";
+		} else if (type === "object" && 'ctor' in v) {
+			if (v.ctor.substring(0,6) === "_Tuple") {
+				var output = [];
+				for (var k in v) {
+					if (k === 'ctor') continue;
+					output.push(toString(v[k], separator));
+				}
+				return "(" + output.join(", ") + ")";
+			} else if (v.ctor === "_Array") {
+				if (!ElmArray) {
+					ElmArray = Elm.Array.make(independentRuntime);
+				}
+				var list = ElmArray.toList(v);
+				return "Array.fromList " + toString(list, separator);
+			} else if (v.ctor === "::") {
+				var output = '[\n' + toString(v._0, separator);
+				v = v._1;
+				while (v && v.ctor === "::") {
+					output += ",\n" + toString(v._0, separator);
+					v = v._1;
+				}
+				return output.replace(/\n/g,"\n" + separator) + "\n]";
+			} else if (v.ctor === "[]") {
+				return "[]";
+			} else if (v.ctor === "RBNode" || v.ctor === "RBEmpty") {
+				if (!Dict || !List) {
+					Dict = Elm.Dict.make(independentRuntime);
+					List = Elm.List.make(independentRuntime);
+				}
+				var list = Dict.toList(v);
+				var name = "Dict";
+				if (list.ctor === "::" && list._0._1.ctor === "_Tuple0") {
+					name = "Set";
+					list = A2(List.map, function(x){return x._0}, list);
+				}
+				return name + ".fromList " + toString(list, separator);
+			} else {
+				var output = "";
+				for (var i in v) {
+					if (i === 'ctor') continue;
+					var str = toString(v[i], separator);
+					var parenless = str[0] === '{' ||
+									str[0] === '<' ||
+									str[0] === "[" ||
+									str.indexOf(' ') < 0;
+					output += ' ' + (parenless ? str : "(" + str + ')');
+				}
+				return v.ctor + output;
+			}
+		}
+		if (type === 'object' && 'notify' in v) return '<signal>';
+		return "<internal structure>";
+	};
 
-    function addSlashes(str) {
-        return str.replace(/\\/g, '\\\\')
-                  .replace(/\n/g, '\\n')
-                  .replace(/\t/g, '\\t')
-                  .replace(/\r/g, '\\r')
-                  .replace(/\v/g, '\\v')
-                  .replace(/\0/g, '\\0')
-                  .replace(/\'/g, "\\'")
-                  .replace(/\"/g, '\\"');
-    }
+	function addSlashes(str)
+	{
+		return str.replace(/\\/g, '\\\\')
+				  .replace(/\n/g, '\\n')
+				  .replace(/\t/g, '\\t')
+				  .replace(/\r/g, '\\r')
+				  .replace(/\v/g, '\\v')
+				  .replace(/\0/g, '\\0')
+				  .replace(/\'/g, "\\'")
+				  .replace(/\"/g, '\\"');
+	}
 
-    function probablyPublic(v) {
-        var keys = Object.keys(v);
-        var len = keys.length;
-        if (len === 3
-            && 'props' in v
-            && 'element' in v) return false;
-        if (len === 5
-            && 'horizontal' in v
-            && 'vertical' in v
-            && 'x' in v
-            && 'y' in v) return false;
-        if (len === 7
-            && 'theta' in v
-            && 'scale' in v
-            && 'x' in v
-            && 'y' in v
-            && 'alpha' in v
-            && 'form' in v) return false;
-        return true;
-    }
+	function probablyPublic(v)
+	{
+		var keys = Object.keys(v);
+		var len = keys.length;
+		if (len === 3
+			&& 'props' in v
+			&& 'element' in v) return false;
+		if (len === 5
+			&& 'horizontal' in v
+			&& 'vertical' in v
+			&& 'x' in v
+			&& 'y' in v) return false;
+		if (len === 7
+			&& 'theta' in v
+			&& 'scale' in v
+			&& 'x' in v
+			&& 'y' in v
+			&& 'alpha' in v
+			&& 'form' in v) return false;
+		return true;
+	}
 
-    return toString;
+	return toString;
 }();
 
 
