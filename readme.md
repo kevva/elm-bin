@@ -10,7 +10,7 @@ $ npm install --global elm
 ```
 
 ```
-$ elm-doc --help
+$ elm --help
 $ elm-make --help
 $ elm-package --help
 $ elm-reactor --help
