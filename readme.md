@@ -5,6 +5,8 @@
 
 ## Install
 
+(On Debian/Ubuntu systems, first install the nodejs-legacy package: `apt-get install nodejs-legacy`.)
+
 ```
 $ npm install --global elm
 ```
