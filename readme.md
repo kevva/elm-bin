@@ -5,7 +5,7 @@
 
 ## Install
 
-(On Debian/Ubuntu systems, first install the nodejs-legacy package: `apt-get install nodejs-legacy`.)
+(If you have problems with your `npm` installation, check this page: https://github.com/npm/npm/wiki/Troubleshooting. On Debian/Ubuntu systems, you may have to install the nodejs-legacy package: `apt-get install nodejs-legacy`.)
 
 ```
 $ npm install --global elm
