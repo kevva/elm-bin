@@ -5,5 +5,7 @@ var spawn = require('child_process').spawn;
 var bin = require('../')['elm-repl'];
 var input = process.argv.slice(2);
 
+process.on('SIGINT', function () { });
+
 spawn(bin, input, {stdio: 'inherit'})
 	.on('exit', process.exit);
