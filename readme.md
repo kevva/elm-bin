@@ -1,3 +1,7 @@
+# DEPRECATED
+
+**This package has been deprecated in favor of the official [elm](https://www.npmjs.com/package/elm) package.**
+
 # elm-bin [![Build Status](https://travis-ci.org/kevva/elm-bin.svg?branch=master)](http://travis-ci.org/kevva/elm-bin)
 
 > Binary wrapper for [elm-platform](https://github.com/elm-lang/elm-platform)
